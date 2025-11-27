@@ -1,45 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Layout from './components/Layout'
 
 function App() {
+  const signList = [
+    "%", "CE", "C", "backdpace",
+    "1/x", "X²", "2√", "÷",
+    "7", "8", "9", "x",
+    "4", "5", "6", "-",
+    "1", "2", "3", "+",
+    "+", "0", ".", "=",
+  ];
+
   const [count, setCount] = useState(0)
 
   return (
     <Layout>
-      
+
       <div className="grid grid-cols-4 gap-4">
-        <div>%</div>
-        <div>CE</div>
-        <div>C</div>
-        <div>backdpace </div>
 
-        <div>1/x</div>
-        <div>X²</div>
-        <div>2√X</div>
-        <div>÷ </div>
+        {signList.map((sign, index) => {
 
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>x </div>
+          return (
+            <div key={index} className='' >
+              {sign}
+            </div>
+          )
+        }
+        )}
 
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>- </div>
-
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>+ </div>
-
-        <div>+/-</div>
-        <div>0</div>
-        <div>.</div>
-        <div>= </div>
 
       </div>
     </Layout>
